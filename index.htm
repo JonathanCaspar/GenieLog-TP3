@@ -348,9 +348,8 @@
         <h2 id="tache7">Tâche 7 : Diagramme de paquets</h2>
         <hr>
         <div class="task_content">
-			<div>
-				<h3 class="underline">Diagramme de classe :</h3> 
-				<img src="Design/img/Paquets.png" style="width:40%;">
+			<div style="flex-basis: 90%;">
+				<img src="Design/img/DiagPaquet.png" style="width:100%;">
 			</div>
 			<div>
 				<p>Ajouter une description...</p>
@@ -382,27 +381,34 @@
         <hr>
         <div class="task_content">
 			<div>
-				<h3 class="underline">Graphe d'accessibilité</h3> 
+				<h3 class="underline">Graphe d'accessibilité / couverture</h3> 
 				<img src="Design/img/DiagCouverturePetri.png">
 			</div>
 			<div id="tache10b">
 				<p>Pour assurer qu'un seul véhicule puisse être présent à la fois dans le tunnel. Il faut que :</p>
 				<p>M(TunnelGauche) + M(TunnelDroit) + M(LumiereGauche) + M(LumiereDroite) = 1 en tout temps.</p>
 
-				<p>Puisque le graphe d'accessibilité modélise toutes les configurations possibles du réseau. Il suffit de vérifier que le vecteur de pondération [0,1,0,1,1,0,1,0] (i.e. 0*M(P7) + 1*M(TunnelDroit) + ... + 0*M(P6)) vérifie l'équation précédente dans toutes les configurations du graphe.</p>
+				<p>Puisque le graphe d'accessibilité modélise toutes les configurations possibles du réseau.</p>
 
-				<p>En surlignant en jaune les places concernées : on constate que leurs sommes est toujours égal à 1.</p>
+				<p>Il suffit de vérifier que le vecteur de pondération <span class="bold">[0,1,0,1,1,0,1,0]</span> (i.e. 0*M(P7) + 1*M(TunnelDroit) + ... + 0*M(P6)) vérifie l'équation précédente dans toutes les configurations du graphe.</p>
 
-				<p>Donc, par la loi de conservation, il n'y jamais plus d'un token (voiture) dans le tunnel à la fois, donc la contrainte (b) est satisfaite.</p>
+				<p>En surlignant en jaune les places concernées (seules certaines configurations ont été coloriées pour donner un exemple) : <span class="bold">on constate que leurs sommes est toujours égal à 1.</span></p>
+
+				<p>Donc, par la loi de conservation, <span class="bold">il n'y jamais plus d'un token (voiture) dans le tunnel à la fois</span>, donc la contrainte (b) est satisfaite.</p>
 			</div>
 		</div>
 
 		<h2 id="tache11">Tâche 11 : Démontrer que la contrainte (c) est satisfaite.</h2>
         <hr>
-        <div>
-        	<p>Puisque nous avons volontairement omis les places (EntréeGauche et EntréeDroite) qui modélisent l'arrivée continue de voiture dans le graphe d'accessibilité, le graphe de couverture est le même que le graphe d'accessibilité car il n'y a pas de sources infinies de tokens.</p>
+        <div style="    margin-right: 50%;">
+        	<p>Puisque nous avons volontairement omis les places (<span class="bold">EntréeGauche</span> et <span class="bold">EntréeDroite</span>) qui modélisent l'arrivée continue de voiture dans le graphe d'accessibilité, le graphe de couverture est le même que le graphe d'accessibilité car il n'y a pas de sources infinies de tokens.</p>
 
         	<p>Nous avons pris cette décision afin de simplifier le graphe car l'absence de ces places n'affectent pas le fonctionnement général du réseau.</p>
+        	<p>Ainsi, on remarque dans le graphe que <span class="bold">l'entrée d'un véhicule sur un côté spécifique de la route</span> (ex: entréeVoitureGauche) est <span class="bold">irrémédiablement suivi d'une sortie d'un véhicule du même côté</span> (ex: sortieVoitureGauche). Par la suite, n'importe quel ordre de transitions nous force à effectuer <span class="bold">une transition d'entrée PUIS de sortie d'un véhicule du côté opposé au précédent passage de voiture</span>, jusqu'à se retrouver dans la configuration initiale.</p>
+
+        	<p>Il y a donc <span class="bold">un droit de passage circulaire</span> qui s'opère entre les deux côtés grâce aux lumières qui <span class="bold">alternent</span> (cette alternance est enclenchée par la sortie d'un véhicule d'un certain côté activant ainsi la lumière de l'autre côté, <span class="bold">chaque véhicule entre alors de manière équitable dans le tunnel</span>. La contrainte (c) est donc satisfaite.</p>
+
+        	<p>Cette alternance <span class="bold">empêche donc toute famine</span> dans le système.</p>
 		</div>
        
         <br>
