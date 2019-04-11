@@ -1,8 +1,9 @@
 package Transit.Voyage;
 
+import Visitor.*;
 import Transit.Lieux.*;
 
-public abstract class Voyage {
+public abstract class Voyage implements VoyageVisitable {
 
 	private Text id;
 	private Lieu lieuDepart;

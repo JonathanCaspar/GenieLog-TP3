@@ -1,19 +1,19 @@
 package Repositories;
 
 import Transit.Lieux.*;
+import java.util.*;
 
 public class LieuRepository extends Repository {
 
-	private Lieu[] lieux;
 	FabriqueLieu fabLieu;
+	Collection<Lieu> lieux;
 
 	/**
 	 * 
-	 * @param FabriqueVoyage
+	 * @param fabLieu
 	 */
-	public void creer(int FabriqueVoyage) {
-		// TODO - implement LieuRepository.creer
-		throw new UnsupportedOperationException();
+	public void creer(FabriqueLieu fabLieu) {
+
 	}
 
 	public void gererLieu() {

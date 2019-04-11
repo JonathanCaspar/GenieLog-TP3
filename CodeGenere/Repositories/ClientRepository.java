@@ -1,10 +1,11 @@
 package Repositories;
 
+import java.util.*;
 import ReservationsClient.*;
 
 public class ClientRepository extends Repository {
 
-	private Client[] clients;
+	Collection<Client> clients;
 
 	public void gererClient() {
 		// TODO - implement ClientRepository.gererClient

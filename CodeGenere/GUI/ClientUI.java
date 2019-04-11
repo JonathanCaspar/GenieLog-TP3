@@ -1,8 +1,9 @@
 package GUI;
 
-public class ClientUI extends RepositoryObserver {
+public class ClientUI {
 
 	private int clientID;
+	ClientDBObserver db;
 
 	public void reserver() {
 		// TODO - implement ClientUI.reserver
@@ -24,7 +25,7 @@ public class ClientUI extends RepositoryObserver {
 		throw new UnsupportedOperationException();
 	}
 
-	public void afficherItinerairesDisponibles() {
+	public void afficherVoyagesDisponibles() {
 		// TODO - implement ClientUI.afficherItinerairesDisponibles
 		throw new UnsupportedOperationException();
 	}

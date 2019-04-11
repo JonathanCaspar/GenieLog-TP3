@@ -1,6 +1,6 @@
 package GUI;
 
-public class AdminUI extends RepositoryObserver {
+public class AdminUI {
 
 	public void gererLieu() {
 		// TODO - implement AdminUI.gererLieu
@@ -13,7 +13,7 @@ public class AdminUI extends RepositoryObserver {
 	}
 
 	public void gererVoyage() {
-		// TODO - implement AdminUI.gererItineraire
+		// TODO - implement AdminUI.gererVoyage
 		throw new UnsupportedOperationException();
 	}
 
@@ -32,31 +32,16 @@ public class AdminUI extends RepositoryObserver {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param Filtre
-	 */
-	public void voirSommaireItineraires(int Filtre) {
-		// TODO - implement AdminUI.voirSommaireItineraires
-		throw new UnsupportedOperationException();
+	public void voirSommaireItineraires() {
+
 	}
 
-	/**
-	 * 
-	 * @param Filtre
-	 */
-	public void voirItinerairesDetailles(int Filtre) {
-		// TODO - implement AdminUI.voirItinerairesDetailles
-		throw new UnsupportedOperationException();
+	public void voirItinerairesDetailles() {
+
 	}
 
-	/**
-	 * 
-	 * @param Text
-	 */
-	public void getReservation(int Text) {
-		// TODO - implement AdminUI.getReservation
-		throw new UnsupportedOperationException();
+	public void getReservation() {
+
 	}
 
 	/**
@@ -67,5 +52,7 @@ public class AdminUI extends RepositoryObserver {
 		// TODO - implement AdminUI.verifierSiReservable
 		throw new UnsupportedOperationException();
 	}
+
+	AdminDBObserver db;
 
 }

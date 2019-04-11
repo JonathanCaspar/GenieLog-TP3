@@ -1,8 +1,10 @@
 package Repositories;
 
+import java.util.*;
+
 public class ReservationRepository extends Repository {
 
-	private Reservation[] reservations;
+	Collection<Reservation> reservations;
 
 	public void getReservationByID() {
 		// TODO - implement ReservationRepository.getReservationByID

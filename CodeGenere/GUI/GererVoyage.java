@@ -2,7 +2,7 @@ package GUI;
 
 import Repositories.*;
 
-public class GererItineraire implements Command {
+public class GererVoyage implements Command {
 
 	VoyageRepository voyageRepository;
 
@@ -10,7 +10,7 @@ public class GererItineraire implements Command {
 	 * 
 	 * @param receiver
 	 */
-	public GererItineraire(VoyageRepository receiver) {
+	public GererVoyage(VoyageRepository receiver) {
 		// TODO - implement GererItineraire.GererItineraire
 		throw new UnsupportedOperationException();
 	}

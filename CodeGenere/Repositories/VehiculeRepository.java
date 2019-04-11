@@ -9,11 +9,10 @@ public class VehiculeRepository extends Repository {
 
 	/**
 	 * 
-	 * @param FabriqueVehicule
+	 * @param fabVehi
 	 */
-	public void creer(int FabriqueVehicule) {
-		// TODO - implement VehiculeRepository.creer
-		throw new UnsupportedOperationException();
+	public void creer(FabriqueVehicule fabVehi) {
+
 	}
 
 	public void gererVehicule() {

@@ -1,6 +1,8 @@
 package CompagniesDeTransport.Sections;
 
-public class HabitatConfirmee {
+import ReservationsClient.*;
+
+public class HabitatConfirmee implements HabitatState {
 
 	public void reserver() {
 		// TODO - implement HabitatConfirmee.reserver

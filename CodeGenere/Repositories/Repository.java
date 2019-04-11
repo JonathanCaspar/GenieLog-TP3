@@ -1,6 +1,6 @@
 package Repositories;
 
-public abstract class Repository extends RepositorySubject implements IRepository {
+public abstract class Repository implements IRepository {
 
 	private Repository instance;
 
