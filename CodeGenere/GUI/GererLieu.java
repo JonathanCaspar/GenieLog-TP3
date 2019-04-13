@@ -4,15 +4,22 @@ import Repositories.*;
 
 public class GererLieu implements Command {
 
-	LieuRepository lieuRepository;
+	Database receiver;
 
-	/**
-	 * 
-	 * @param receiver
-	 */
-	public GererLieu(LieuRepository receiver) {
-		// TODO - implement GererLieu.GererLieu
-		throw new UnsupportedOperationException();
+	public GererLieu(Database receiver) {
+		this.receiver = receiver;
+	}
+
+	@Override
+	public void execute() {
+		receiver.gererLieuDB();
+		
+	}
+
+	@Override
+	public void undo() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

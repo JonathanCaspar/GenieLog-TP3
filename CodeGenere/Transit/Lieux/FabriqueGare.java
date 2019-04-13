@@ -1,10 +1,15 @@
 package Transit.Lieux;
 
+import java.util.Scanner;
+
 public class FabriqueGare extends FabriqueLieu {
 
-	protected void fabricateUnit() {
-		// TODO - implement FabriqueGare.fabricateUnit
-		throw new UnsupportedOperationException();
+	public FabriqueGare(Scanner userInput) {
+		super(userInput);
+	}
+
+	protected Lieu fabricateUnit() {
+		return new Gare();
 	}
 
 }

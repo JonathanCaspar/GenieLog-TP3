@@ -1,10 +1,15 @@
 package CompagniesDeTransport;
 
+import java.util.Scanner;
+
 public class FabriquePaquebot extends FabriqueVehicule {
 
-	public void fabricateUnit() {
-		// TODO - implement FabriquePaquebot.fabricateUnit
-		throw new UnsupportedOperationException();
+	public FabriquePaquebot(Scanner userInput) {
+		super(userInput);
+	}
+
+	public Vehicule fabricateUnit() {
+		return new Paquebot();
 	}
 
 }

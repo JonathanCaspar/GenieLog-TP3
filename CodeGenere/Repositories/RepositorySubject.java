@@ -20,7 +20,7 @@ public abstract class RepositorySubject {
 
 	}
 
-	public void notify() {
+	public void subjectNotify() {
 		// TODO - implement RepositorySubject.notify
 		throw new UnsupportedOperationException();
 	}

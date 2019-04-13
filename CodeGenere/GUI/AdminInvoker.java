@@ -8,14 +8,12 @@ public class AdminInvoker {
 	 * 
 	 * @param Command
 	 */
-	public void setCommand(int Command) {
-		// TODO - implement AdminInvoker.setCommand
-		throw new UnsupportedOperationException();
+	public void setCommand(Command command) {
+		this.command = command;
 	}
 
 	public void executeCommand() {
-		// TODO - implement AdminInvoker.executeCommand
-		throw new UnsupportedOperationException();
+		command.execute();
 	}
 
 }

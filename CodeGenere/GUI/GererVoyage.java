@@ -4,15 +4,22 @@ import Repositories.*;
 
 public class GererVoyage implements Command {
 
-	VoyageRepository voyageRepository;
+	Database receiver;
 
-	/**
-	 * 
-	 * @param receiver
-	 */
-	public GererVoyage(VoyageRepository receiver) {
-		// TODO - implement GererItineraire.GererItineraire
-		throw new UnsupportedOperationException();
+	public GererVoyage(Database receiver) {
+		this.receiver = receiver;
+	}
+
+	@Override
+	public void execute() {
+		receiver.gererVoyageDB();
+		
+	}
+
+	@Override
+	public void undo() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

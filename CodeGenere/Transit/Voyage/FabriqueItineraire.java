@@ -1,10 +1,15 @@
 package Transit.Voyage;
 
+import java.util.Scanner;
+
 public class FabriqueItineraire extends FabriqueVoyage {
 
-	protected void fabricateUnit() {
-		// TODO - implement FabriqueItineraire.fabricateUnit
-		throw new UnsupportedOperationException();
+	public FabriqueItineraire(Scanner userInput) {
+		super(userInput);
+	}
+
+	protected Voyage fabricateUnit() {
+		return new Itineraire();
 	}
 
 }

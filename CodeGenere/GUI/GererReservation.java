@@ -4,15 +4,22 @@ import Repositories.*;
 
 public class GererReservation implements Command {
 
-	ReservationRepository reservationRepository;
+	Database receiver;
 
-	/**
-	 * 
-	 * @param receiver
-	 */
-	public GererReservation(ReservationRepository receiver) {
-		// TODO - implement GererReservation.GererReservation
-		throw new UnsupportedOperationException();
+	public GererReservation(Database receiver) {
+		this.receiver = receiver;
+	}
+
+	@Override
+	public void execute() {
+		receiver.gererReservationDB();
+		
+	}
+
+	@Override
+	public void undo() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -1,9 +1,17 @@
 package GUI;
 
+import ReservationsClient.Client;
+
 public class ClientUI {
 
 	private int clientID;
+	private Client client;
 	ClientDBObserver db;
+	
+	public ClientUI(Client client) {
+		this.client = client;
+		db = new ClientDBObserver();
+	}
 
 	public void reserver() {
 		// TODO - implement ClientUI.reserver

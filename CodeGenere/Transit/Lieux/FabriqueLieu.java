@@ -1,15 +1,25 @@
 package Transit.Lieux;
 
-public abstract class FabriqueLieu {
+import java.util.*;
 
-	protected void fabricateUnit() {
-		// TODO - implement FabriqueLieu.fabricateUnit
-		throw new UnsupportedOperationException();
+public abstract class FabriqueLieu {
+	
+	Scanner userInput;
+	public FabriqueLieu(Scanner userInput){
+		this.userInput = userInput;
 	}
 
-	public void createLieu() {
-		// TODO - implement FabriqueLieu.createLieu
-		throw new UnsupportedOperationException();
+	protected abstract Lieu fabricateUnit();
+
+	public Lieu createLieu() {
+		Lieu newlieu = fabricateUnit();
+		System.out.println("Entrer un sigil:\n");
+		newlieu.setSigle(userInput.next());
+		System.out.println("Entrer un pays:\n");
+		newlieu.setPays(userInput.next());
+		System.out.println("Entrer une ville:\n");
+		newlieu.setVille(userInput.next());
+		return newlieu;
 	}
 
 }

@@ -1,10 +1,15 @@
 package Transit.Lieux;
 
+import java.util.Scanner;
+
 public class FabriqueAeroport extends FabriqueLieu {
 
-	protected void fabricateUnit() {
-		// TODO - implement FabriqueAeroport.fabricateUnit
-		throw new UnsupportedOperationException();
+	public FabriqueAeroport(Scanner userInput) {
+		super(userInput);
+	}
+
+	protected Lieu fabricateUnit() {
+		return new Aeroport();
 	}
 
 }

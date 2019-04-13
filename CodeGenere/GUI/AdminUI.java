@@ -1,15 +1,28 @@
 package GUI;
 
-public class AdminUI {
+import Repositories.Database;
+import ReservationsClient.Client;
 
+public class AdminUI {
+	
+	AdminInvoker adminInvo;
+	AdminDBObserver db;
+	
+	//constructeur
+	public AdminUI(Database localDB) {
+		adminInvo = new AdminInvoker();
+		db = new AdminDBObserver("admin");
+	}
+	
+	//Prend gererLieu comme exemple de structure. Il y a aussi compagnie et vehicule qui fonctionnent
 	public void gererLieu() {
-		// TODO - implement AdminUI.gererLieu
-		throw new UnsupportedOperationException();
+		adminInvo.setCommand(new GererLieu(db.getSubjectReference()));
+		adminInvo.executeCommand();
 	}
 
 	public void gererCompagnie() {
-		// TODO - implement AdminUI.gererCompagnie
-		throw new UnsupportedOperationException();
+		adminInvo.setCommand(new GererCompagnie(db.getSubjectReference()));
+		adminInvo.executeCommand();
 	}
 
 	public void gererVoyage() {
@@ -18,8 +31,8 @@ public class AdminUI {
 	}
 
 	public void gererVehicule() {
-		// TODO - implement AdminUI.gererVehicule
-		throw new UnsupportedOperationException();
+		adminInvo.setCommand(new GererVehicule(db.getSubjectReference()));
+		adminInvo.executeCommand();
 	}
 
 	public void gererClient() {
@@ -43,6 +56,14 @@ public class AdminUI {
 	public void getReservation() {
 
 	}
+	
+	public Client getClient(int clientID) {
+		return null;
+	}
+	
+	public AdminDBObserver getAdminObserver() {
+		return this.db;
+	}
 
 	/**
 	 * 
@@ -53,6 +74,5 @@ public class AdminUI {
 		throw new UnsupportedOperationException();
 	}
 
-	AdminDBObserver db;
 
 }

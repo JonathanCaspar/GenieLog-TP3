@@ -2,17 +2,23 @@ package GUI;
 
 import Repositories.*;
 
-public class GererVehicule {
+public class GererVehicule implements Command {
 
-	VehiculeRepository vehiculeRepository;
+	Database receiver;
 
-	/**
-	 * 
-	 * @param receiver
-	 */
-	public GererVehicule(VehiculeRepository receiver) {
-		// TODO - implement GererVehicule.GererVehicule
-		throw new UnsupportedOperationException();
+	public GererVehicule(Database receiver) {
+		this.receiver = receiver;
+	}
+
+	@Override
+	public void execute() {
+		receiver.gererVehiculeDB();
+	}
+
+	@Override
+	public void undo() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

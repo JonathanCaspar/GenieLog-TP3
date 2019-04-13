@@ -4,15 +4,22 @@ import Repositories.*;
 
 public class GererClient implements Command {
 
-	ClientRepository clientRepository;
+	Database receiver;
 
-	/**
-	 * 
-	 * @param receiver
-	 */
-	public GererClient(ClientRepository receiver) {
-		// TODO - implement GererClient.GererClient
-		throw new UnsupportedOperationException();
+	public GererClient(Database receiver) {
+		this.receiver = receiver;
+	}
+
+	@Override
+	public void execute() {
+		receiver.gererClientDB();
+		
+	}
+
+	@Override
+	public void undo() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

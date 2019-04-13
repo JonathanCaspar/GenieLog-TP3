@@ -1,10 +1,15 @@
 package Transit.Lieux;
 
+import java.util.Scanner;
+
 public class FabriquePort extends FabriqueLieu {
 
-	protected void fabricateUnit() {
-		// TODO - implement FabriquePort.fabricateUnit
-		throw new UnsupportedOperationException();
+	public FabriquePort(Scanner userInput) {
+		super(userInput);
+	}
+
+	protected Lieu fabricateUnit() {
+		return new Port();
 	}
 
 }

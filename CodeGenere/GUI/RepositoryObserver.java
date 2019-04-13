@@ -10,5 +10,8 @@ public abstract class RepositoryObserver {
 		// TODO - implement RepositoryObserver.update
 		throw new UnsupportedOperationException();
 	}
+	
+	public void setSubject(Database subject) {
 
+	}
 }

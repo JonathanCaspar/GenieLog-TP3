@@ -4,15 +4,22 @@ import Repositories.*;
 
 public class GererCompagnie implements Command {
 
-	CompagnieRepository compagnieRepository;
+	Database receiver;
 
-	/**
-	 * 
-	 * @param receiver
-	 */
-	public GererCompagnie(CompagnieRepository receiver) {
-		// TODO - implement GererCompagnie.GererCompagnie
-		throw new UnsupportedOperationException();
+	public GererCompagnie(Database receiver) {
+		this.receiver = receiver;
+	}
+
+	@Override
+	public void execute() {
+		receiver.gererCompagnieDB();
+		
+	}
+
+	@Override
+	public void undo() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

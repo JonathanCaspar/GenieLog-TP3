@@ -1,3 +1,5 @@
+package Paiement;
+
 public interface Paiement {
 
 	/**

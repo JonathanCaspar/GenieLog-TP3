@@ -1,3 +1,5 @@
+package ReservationsClient;
+
 import Transit.Voyage.*;
 
 public class Reservation {

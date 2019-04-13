@@ -1,15 +1,21 @@
 package CompagniesDeTransport;
 
+import java.util.*;
+
+import Transit.Lieux.Lieu;
+
 public abstract class FabriqueVehicule {
 
-	protected void fabricateUnit() {
-		// TODO - implement FabriqueVehicule.fabricateUnit
-		throw new UnsupportedOperationException();
+	Scanner userInput;
+	public FabriqueVehicule(Scanner userInput){
+		this.userInput = userInput;
 	}
+	protected abstract Vehicule fabricateUnit();
 
-	public void createVehicule() {
-		// TODO - implement FabriqueVehicule.createVehicule
-		throw new UnsupportedOperationException();
+	public Vehicule createVehicule(int newId) {
+		Vehicule newvehicule = fabricateUnit();
+		newvehicule.setId(newId);
+		return newvehicule;
 	}
 
 }
