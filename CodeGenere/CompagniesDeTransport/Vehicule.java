@@ -35,7 +35,7 @@ public abstract class Vehicule {
 				toTheNextStep = false;
 			}
 			catch(NumberFormatException e){
-				System.out.println("Nombre non valide. Veuillez réessayer:\n");
+				System.out.println("Nombre non valide. Veuillez reessayer:\n");
 			}
 		}
 		return selection;

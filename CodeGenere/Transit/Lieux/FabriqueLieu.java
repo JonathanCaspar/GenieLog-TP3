@@ -13,7 +13,7 @@ public abstract class FabriqueLieu {
 
 	public Lieu createLieu() {
 		Lieu newlieu = fabricateUnit();
-		System.out.println("Entrer un sigil:\n");
+		System.out.println("Entrer un sigle:\n");
 		newlieu.setSigle(userInput.next());
 		System.out.println("Entrer un pays:\n");
 		newlieu.setPays(userInput.next());

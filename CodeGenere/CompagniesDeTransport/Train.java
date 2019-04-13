@@ -27,20 +27,20 @@ public class Train extends Vehicule {
 		String clientMenuString = "1) Affaire\n2) Premiere\n3) EcoPlus\n4)Economique";
 		int selection = 0;
 		List<Integer> selectNumber = Arrays.asList(1, 2, 3, 4);
-				System.out.println("Quelle type de Section voulez vous créer?\n"+ clientMenuString);
+				System.out.println("Quelle type de Section voulez vous creer?\n"+ clientMenuString);
 				boolean toTheNextStep = true;
 				while(toTheNextStep) {
 					try {
 						selection = Integer.parseInt(userInput.next());
 						
 						if(!selectNumber.contains(selection)) {
-							System.out.println("Selection non valide. Veuillez réessayer:\n"
+							System.out.println("Selection non valide. Veuillez rï¿½essayer:\n"
 									+ clientMenuString);
 						}
 						else toTheNextStep = false;
 					}
 					catch(NumberFormatException e){
-						System.out.println("Selection non valide. Veuillez réessayer:\n"
+						System.out.println("Selection non valide. Veuillez rï¿½essayer:\n"
 								+ clientMenuString);
 					}
 				}

@@ -27,60 +27,60 @@ public class Paquebot extends Vehicule {
 		String clientMenuString = "1) Famille Deluxe\n2) Famille\n3) Suite\n4)Vue Sur Ocean\n5)Interieur";
 		int selection = 0;
 		List<Integer> selectNumber = Arrays.asList(1, 2, 3, 4, 5);
-				System.out.println("Quelle type de Section voulez vous créer?\n"+ clientMenuString);
+				System.out.println("Quelle type de Section voulez vous creer?\n"+ clientMenuString);
 				boolean toTheNextStep = true;
 				while(toTheNextStep) {
 					try {
 						selection = Integer.parseInt(userInput.next());
 						
 						if(!selectNumber.contains(selection)) {
-							System.out.println("Selection non valide. Veuillez réessayer:\n"
+							System.out.println("Selection non valide. Veuillez reessayer:\n"
 									+ clientMenuString);
 						}
 						else toTheNextStep = false;
 					}
 					catch(NumberFormatException e){
-						System.out.println("Selection non valide. Veuillez réessayer:\n"
+						System.out.println("Selection non valide. Veuillez reessayer:\n"
 								+ clientMenuString);
 					}
 				}
 				toTheNextStep = true;
 				SectionCabines sec;
-				System.out.println("Quelle est le nombre de cabine?\n");
+				System.out.println("Quel est le nombre de cabine?\n");
 				switch(selection) {
 					case 1:
 						sec = new CabineFamilleDeluxe();
 						sec.setNbCabines(acceptSiegeNb(userInput));
-						System.out.println("Quelle est la capacité?\n");
-						sec.setCapacité(acceptSiegeNb(userInput));
+						System.out.println("Quelle est la capacite?\n");
+						sec.setCapacite(acceptSiegeNb(userInput));
 						sections.add(sec);
 						break;
 					case 2:
 						sec = new CabineFamille();
 						sec.setNbCabines(acceptSiegeNb(userInput));
-						System.out.println("Quelle est la capacité?\n");
-						sec.setCapacité(acceptSiegeNb(userInput));
+						System.out.println("Quelle est la capacite?\n");
+						sec.setCapacite(acceptSiegeNb(userInput));
 						sections.add(sec);
 						break;
 					case 3:
 						sec = new CabineSuite();
 						sec.setNbCabines(acceptSiegeNb(userInput));
-						System.out.println("Quelle est la capacité?\n");
-						sec.setCapacité(acceptSiegeNb(userInput));
+						System.out.println("Quelle est la capacite?\n");
+						sec.setCapacite(acceptSiegeNb(userInput));
 						sections.add(sec);
 						break;
 					case 4:
 						sec = new CabineVueSurOcean();
 						sec.setNbCabines(acceptSiegeNb(userInput));
-						System.out.println("Quelle est la capacité?\n");
-						sec.setCapacité(acceptSiegeNb(userInput));
+						System.out.println("Quelle est la capacite?\n");
+						sec.setCapacite(acceptSiegeNb(userInput));
 						sections.add(sec);
 						break;
 					case 5:
 						sec = new CabineInterieur();
 						sec.setNbCabines(acceptSiegeNb(userInput));
-						System.out.println("Quelle est la capacité?\n");
-						sec.setCapacité(acceptSiegeNb(userInput));
+						System.out.println("Quelle est la capacite?\n");
+						sec.setCapacite(acceptSiegeNb(userInput));
 						sections.add(sec);
 						break;
 					default:

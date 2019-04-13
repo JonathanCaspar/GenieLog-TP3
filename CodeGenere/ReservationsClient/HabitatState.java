@@ -2,7 +2,7 @@ package ReservationsClient;
 
 public interface HabitatState {
 
-	Reservation getReservationAssociée();
+	Reservation getReservationAssociee();
 
 	void reserver();
 

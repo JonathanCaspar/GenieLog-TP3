@@ -1,6 +1,6 @@
 package CompagniesDeTransport.Sections;
 
-public enum disposition {
+public enum Disposition {
 	etroit,
 	confort,
 	moyen,

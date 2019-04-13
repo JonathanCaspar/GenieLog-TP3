@@ -6,13 +6,6 @@ import java.util.List;
 import java.util.Scanner;
 
 import CompagniesDeTransport.*;
-import Transit.Lieux.Aeroport;
-import Transit.Lieux.FabriqueAeroport;
-import Transit.Lieux.FabriqueGare;
-import Transit.Lieux.FabriquePort;
-import Transit.Lieux.Gare;
-import Transit.Lieux.Lieu;
-import Transit.Lieux.Port;
 
 public class VehiculeRepository extends Repository {
 
@@ -54,24 +47,24 @@ public class VehiculeRepository extends Repository {
 
 	public boolean gererVehicule() {
 		boolean endCommand = true;
-		String clientMenuString = "1) Créer un nouveau vehicule\n2) Effacer un vehicule\n3) Modifier un vehicule\n4) Log Out";
+		String clientMenuString = "1) CrÃ©er un nouveau vehicule\n2) Effacer un vehicule\n3) Modifier un vehicule\n4) Log Out";
 		int selection = 0;
 		List<Integer> selectNumber = Arrays.asList(1, 2, 3, 4);
 		while(endCommand) {
-				System.out.println("Quelle opération voulez vous effectuer?\n"+ clientMenuString);
+				System.out.println("Quelle opÃ©ration voulez vous effectuer?\n"+ clientMenuString);
 				boolean toTheNextStep = true;
 				while(toTheNextStep) {
 					try {
 						selection = Integer.parseInt(userInput.next());
 						
 						if(!selectNumber.contains(selection)) {
-							System.out.println("Selection non valide. Veuillez réessayer:\n"
+							System.out.println("Selection non valide. Veuillez rÃ©essayer:\n"
 									+ clientMenuString);
 						}
 						else toTheNextStep = false;
 					}
 					catch(NumberFormatException e){
-						System.out.println("Selection non valide. Veuillez réessayer:\n"
+						System.out.println("Selection non valide. Veuillez rÃ©essayer:\n"
 								+ clientMenuString);
 					}
 				}
@@ -105,20 +98,20 @@ public class VehiculeRepository extends Repository {
 		String clientMenuString = "1) Avion\n2) Paquebot\n3) Train";
 		int selection = 0;
 		List<Integer> selectNumber = Arrays.asList(1, 2, 3);
-				System.out.println("Quelle type de Vehicule voulez vous créer?\n"+ clientMenuString);
+				System.out.println("Quelle type de Vehicule voulez vous crÃ©er?\n"+ clientMenuString);
 				boolean toTheNextStep = true;
 				while(toTheNextStep) {
 					try {
 						selection = Integer.parseInt(userInput.next());
 						
 						if(!selectNumber.contains(selection)) {
-							System.out.println("Selection non valide. Veuillez réessayer:\n"
+							System.out.println("Selection non valide. Veuillez rÃ©essayer:\n"
 									+ clientMenuString);
 						}
 						else toTheNextStep = false;
 					}
 					catch(NumberFormatException e){
-						System.out.println("Selection non valide. Veuillez réessayer:\n"
+						System.out.println("Selection non valide. Veuillez rÃ©essayer:\n"
 								+ clientMenuString);
 					}
 				}
@@ -152,13 +145,13 @@ public class VehiculeRepository extends Repository {
 				selection = Integer.parseInt(userInput.next());
 				
 				if(!(0 <= selection && selection < vehicules.size())) {
-					System.out.println("Selection non valide. Veuillez réessayer:\n");
+					System.out.println("Selection non valide. Veuillez rÃ©essayer:\n");
 					consulter();
 				}
 				else toTheNextStep = false;
 			}
 			catch(NumberFormatException e){
-				System.out.println("Selection non valide. Veuillez réessayer:\n");
+				System.out.println("Selection non valide. Veuillez rÃ©essayer:\n");
 				consulter();
 			}
 		}
@@ -176,7 +169,7 @@ public class VehiculeRepository extends Repository {
 
 	@Override
 	public void modifier() {
-		System.out.println("Veuiller selectioner le numéro du vehicule à modifier:");
+		System.out.println("Veuiller selectioner le numÃ©ro du vehicule Ã© modifier:");
 		int toMod = getConsultIndex();
 		System.out.println("Quelle modification voulez vous effectuer sur: " + vehiculePrint(vehicules.get(toMod)) + "?");
 		System.out.println("1)Ajouter section\n2)Supprimer section\n3)Annuler");
@@ -188,33 +181,33 @@ public class VehiculeRepository extends Repository {
 				selection = Integer.parseInt(userInput.next());
 				
 				if(!(selection == 1 || selection == 2 || selection == 3)) {
-					System.out.println("Selection non valide. Veuillez réessayer:\n1)Ajouter section\n2)Supprimer section\n3)Annuler");
+					System.out.println("Selection non valide. Veuillez rÃ©essayer:\n1)Ajouter section\n2)Supprimer section\n3)Annuler");
 				}
 				else toTheNextStep = false;
 			}
 			catch(NumberFormatException e){
-				System.out.println("Selection non valide. Veuillez réessayer:\n1)Ajouter section\n2)Supprimer section\n3)Annuler");
+				System.out.println("Selection non valide. Veuillez rÃ©essayer:\n1)Ajouter section\n2)Supprimer section\n3)Annuler");
 			}
 		}
 		toTheNextStep = true;
 				
 		if(selection == 1) {
 			vehicules.get(toMod).addSections(userInput);;
-			System.out.println("Modification réussite.");
+			System.out.println("Modification rÃ©ussite.");
 			change = true;
 		}else if(selection == 2) {
 			System.out.println("Manque Implementation:");
 			change = true;
 		}
-		else System.out.println("Modification annulée.");
+		else System.out.println("Modification annulÃ©e.");
 		
 	}
 
 	@Override
 	public void supprimer() {
-		System.out.println("Veuiller selectioner le numéro du vehicule à supprimer:");
+		System.out.println("Veuiller selectioner le numÃ©ro du vehicule Ã© supprimer:");
 		int toDelete = getConsultIndex();
-		System.out.println("Êtes vous sûr de vouloir supprimer: " + vehiculePrint(vehicules.get(toDelete)) + "?");
+		System.out.println("Ã©tes vous sÃ©r de vouloir supprimer: " + vehiculePrint(vehicules.get(toDelete)) + "?");
 		System.out.println("1)Oui\n2)Non");
 		
 		int selection = 0;
@@ -224,22 +217,22 @@ public class VehiculeRepository extends Repository {
 				selection = Integer.parseInt(userInput.next());
 				
 				if(!(selection == 1 || selection == 2)) {
-					System.out.println("Selection non valide. Veuillez réessayer:\n1)Oui\\n2)Non");
+					System.out.println("Selection non valide. Veuillez rÃ©essayer:\n1)Oui\\n2)Non");
 				}
 				else toTheNextStep = false;
 			}
 			catch(NumberFormatException e){
-				System.out.println("Selection non valide. Veuillez réessayer:\n1)Oui\\n2)Non");
+				System.out.println("Selection non valide. Veuillez rÃ©essayer:\n1)Oui\\n2)Non");
 			}
 		}
 		toTheNextStep = true;
 		
 		if(selection == 1) {
 			vehicules.remove(toDelete);
-			System.out.println("Supression réussite.");
+			System.out.println("Supression rÃ©ussite.");
 			change = true;
 		}
-		else System.out.println("Supression annulée.");
+		else System.out.println("Supression annulÃ©e.");
 	}
 
 }

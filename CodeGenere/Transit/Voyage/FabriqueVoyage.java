@@ -24,9 +24,9 @@ public abstract class FabriqueVoyage {
 		voy.setId(userInput.next());
 		
 		/*
-		System.out.println("Entrer un lieu de départ:\n");
+		System.out.println("Entrer un lieu de dï¿½part:\n");
 		voy.setLieuDepart(userInput.next());
-		System.out.println("Entrer un lieu d'arrivé:\n");
+		System.out.println("Entrer un lieu d'arrivï¿½:\n");
 		voy.setLieuArrivee(userInput.next());
 		*/
 		
@@ -38,14 +38,14 @@ public abstract class FabriqueVoyage {
 
 				//Date date = simpleDateFormat.parse("2018-09-09");
 				
-				System.out.println("Entrer une date de départ(AAAA-MM-JJ):\n");
+				System.out.println("Entrer une date de dÃ©part(AAAA-MM-JJ):\n");
 				Date date = simpleDateFormat.parse(userInput.next());
 				
 				voy.setDateDepart(date);
 				timeok = false;
 				
 			}catch(ParseException e) {
-				System.out.println("Format invalide. Veuiller réessayer:");
+				System.out.println("Format invalide. Veuiller rï¿½essayer:");
 			}
 		}
 		timeok = true;

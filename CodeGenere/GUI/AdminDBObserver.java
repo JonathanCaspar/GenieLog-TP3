@@ -26,7 +26,7 @@ public class AdminDBObserver extends RepositoryObserver {
 		setCompagnieRepo(subject.getCompagnieRepoUpdate());
 		updateTester = subject.getTestUpdate();
 		
-		System.out.println("Admin mis à jour.");
+		System.out.println("Admin mis Ã  jour.");
 	}
 	public void setSubject(Database subject) {
 		this.subject = subject;

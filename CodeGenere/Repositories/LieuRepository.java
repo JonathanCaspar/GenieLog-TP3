@@ -15,14 +15,14 @@ public class LieuRepository extends Repository {
 		Lieu lieu3 = new Gare();
 		
 		lieu1.setPays("Canada");
-		lieu2.setPays("États-Unis");
+		lieu2.setPays("Etats-Unis");
 		lieu3.setPays("Japon");
 		
 		lieu1.setSigle("CND");
 		lieu2.setSigle("UNS");
 		lieu3.setSigle("JPN");
 		
-		lieu1.setVille("Montréal");
+		lieu1.setVille("Montreal");
 		lieu2.setVille("New York");
 		lieu3.setVille("Tokyo");
 		lieux = new ArrayList<Lieu>();
@@ -47,25 +47,25 @@ public class LieuRepository extends Repository {
 	//La ou on prompt le user et donne les choix
 	public boolean gererLieu() {
 		boolean endCommand = true;
-		String clientMenuString = "1) Créer un nouveau lieu\n2) Effacer un lieu\n3) Modifier un lieu\n4) Log Out";
+		String clientMenuString = "1) CrÃ©er un nouveau lieu\n2) Effacer un lieu\n3) Modifier un lieu\n4) Log Out";
 		int selection = 0;
 		List<Integer> selectNumber = Arrays.asList(1, 2, 3, 4);
 		//Tu reconnais cette structure?
 		while(endCommand) {
-				System.out.println("Quelle opération voulez vous effectuer?\n"+ clientMenuString);
+				System.out.println("Quelle opÃ©ration voulez vous effectuer?\n"+ clientMenuString);
 				boolean toTheNextStep = true;
 				while(toTheNextStep) {
 					try {
 						selection = Integer.parseInt(userInput.next());
 						
 						if(!selectNumber.contains(selection)) {
-							System.out.println("Selection non valide. Veuillez réessayer:\n"
+							System.out.println("Selection non valide. Veuillez rÃ©essayer:\n"
 									+ clientMenuString);
 						}
 						else toTheNextStep = false;
 					}
 					catch(NumberFormatException e){
-						System.out.println("Selection non valide. Veuillez réessayer:\n"
+						System.out.println("Selection non valide. Veuillez rÃ©essayer:\n"
 								+ clientMenuString);
 					}
 				}
@@ -97,23 +97,23 @@ public class LieuRepository extends Repository {
 
 	@Override
 	public void creer() {
-		String clientMenuString = "1) Aéroport\n2) Port\n3) Gare";
+		String clientMenuString = "1) AÃ©roport\n2) Port\n3) Gare";
 		int selection = 0;
 		List<Integer> selectNumber = Arrays.asList(1, 2, 3);
-				System.out.println("Quelle type de Lieu vouvlez vous créer?\n"+ clientMenuString);
+				System.out.println("Quelle type de Lieu voulez vous crÃ©er?\n"+ clientMenuString);
 				boolean toTheNextStep = true;
 				while(toTheNextStep) {
 					try {
 						selection = Integer.parseInt(userInput.next());
 						
 						if(!selectNumber.contains(selection)) {
-							System.out.println("Selection non valide. Veuillez réessayer:\n"
+							System.out.println("Selection non valide. Veuillez rÃ©essayer:\n"
 									+ clientMenuString);
 						}
 						else toTheNextStep = false;
 					}
 					catch(NumberFormatException e){
-						System.out.println("Selection non valide. Veuillez réessayer:\n"
+						System.out.println("Selection non valide. Veuillez rÃ©essayer:\n"
 								+ clientMenuString);
 					}
 				}
@@ -144,7 +144,7 @@ public class LieuRepository extends Repository {
 	}
 	
 	public String lieuPrint(Lieu lieu) {
-		return ("Sigil: " + lieu.getSigle() + " | Pays: " + lieu.getPays() + " | Ville: " + lieu.getVille());
+		return ("Sigle: " + lieu.getSigle() + " | Pays: " + lieu.getPays() + " | Ville: " + lieu.getVille());
 	}
 
 	public int getConsultIndex() {
@@ -156,13 +156,13 @@ public class LieuRepository extends Repository {
 				selection = Integer.parseInt(userInput.next());
 				
 				if(!(0 <= selection && selection < lieux.size())) {
-					System.out.println("Selection non valide. Veuillez réessayer:\n");
+					System.out.println("Selection non valide. Veuillez rÃ©essayer:\n");
 					consulter();
 				}
 				else toTheNextStep = false;
 			}
 			catch(NumberFormatException e){
-				System.out.println("Selection non valide. Veuillez réessayer:\n");
+				System.out.println("Selection non valide. Veuillez rÃ©essayer:\n");
 				consulter();
 			}
 		}
@@ -170,10 +170,10 @@ public class LieuRepository extends Repository {
 	}
 	@Override
 	public void modifier() {
-		System.out.println("Veuiller selectioner le numéro du lieu à modifier:");
+		System.out.println("Veuillez selectioner le numÃ©ro du lieu Ã  modifier:");
 		int toMod = getConsultIndex();
 		System.out.println("Quelle information voulez vous modifier sur: " + lieuPrint(lieux.get(toMod)) + "?");
-		System.out.println("1)Sigil\n2)Pays\n3)Ville\n4)Annuler");
+		System.out.println("1)Sigle\n2)Pays\n3)Ville\n4)Annuler");
 		
 		int selection = 0;
 		boolean toTheNextStep = true;
@@ -182,40 +182,40 @@ public class LieuRepository extends Repository {
 				selection = Integer.parseInt(userInput.next());
 				
 				if(!(selection == 1 || selection == 2 || selection == 3 || selection == 4)) {
-					System.out.println("Selection non valide. Veuillez réessayer:\n1)Sigil\n2)Pays\n3)Ville\n4)Annuler");
+					System.out.println("Selection non valide. Veuillez rÃ©essayer:\n1)Sigil\n2)Pays\n3)Ville\n4)Annuler");
 				}
 				else toTheNextStep = false;
 			}
 			catch(NumberFormatException e){
-				System.out.println("Selection non valide. Veuillez réessayer:\n1)Sigil\n2)Pays\n3)Ville\n4)Annuler");
+				System.out.println("Selection non valide. Veuillez rÃ©essayer:\n1)Sigil\n2)Pays\n3)Ville\n4)Annuler");
 			}
 		}
 		toTheNextStep = true;
 				
 		if(selection == 1) {
-			System.out.println("Veuiller entrer un nouveau Sigil:");
+			System.out.println("Veuillez entrer un nouveau Sigle:");
 			lieux.get(toMod).setSigle(userInput.next());;
-			System.out.println("Modification réussite.");
+			System.out.println("Modification rÃ©ussite.");
 			change = true;
 		}else if(selection == 2) {
-			System.out.println("Veuiller entrer un nouveau Pays:");
+			System.out.println("Veuillez entrer un nouveau Pays:");
 			lieux.get(toMod).setPays(userInput.next());;
-			System.out.println("Modification réussite.");
+			System.out.println("Modification rÃ©ussite.");
 			change = true;
 		}else if(selection == 3) {
-			System.out.println("Veuiller entrer une nouvelle Ville:");
+			System.out.println("Veuillez entrer une nouvelle Ville:");
 			lieux.get(toMod).setVille(userInput.next());;
-			System.out.println("Modification réussite.");
+			System.out.println("Modification rÃ©ussite.");
 			change = true;
 		}
-		else System.out.println("Modification annulée.");
+		else System.out.println("Modification annulÃ©e.");
 	}
 
 	@Override
 	public void supprimer() {
-		System.out.println("Veuiller selectioner le numéro du lieu à supprimer:");
+		System.out.println("Veuillez selectioner le numÃ©ro du lieu Ã  supprimer:");
 		int toDelete = getConsultIndex();
-		System.out.println("Êtes vous sûr de vouloir supprimer: " + lieuPrint(lieux.get(toDelete)) + "?");
+		System.out.println("Etes vous sur de vouloir supprimer: " + lieuPrint(lieux.get(toDelete)) + "?");
 		System.out.println("1)Oui\n2)Non");
 		
 		int selection = 0;
@@ -225,22 +225,22 @@ public class LieuRepository extends Repository {
 				selection = Integer.parseInt(userInput.next());
 				
 				if(!(selection == 1 || selection == 2)) {
-					System.out.println("Selection non valide. Veuillez réessayer:\n1)Oui\\n2)Non");
+					System.out.println("Selection non valide. Veuillez rÃ©essayer:\n1)Oui\\n2)Non");
 				}
 				else toTheNextStep = false;
 			}
 			catch(NumberFormatException e){
-				System.out.println("Selection non valide. Veuillez réessayer:\n1)Oui\\n2)Non");
+				System.out.println("Selection non valide. Veuillez rÃ©essayer:\n1)Oui\\n2)Non");
 			}
 		}
 		toTheNextStep = true;
 		
 		if(selection == 1) {
 			lieux.remove(toDelete);
-			System.out.println("Supression réussite.");
+			System.out.println("Suppression rÃ©ussite.");
 			change = true;
 		}
-		else System.out.println("Supression annulée.");
+		else System.out.println("Suppression annulÃ©e.");
 	}
 
 }

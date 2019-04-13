@@ -1,14 +1,16 @@
 package ReservationsClient;
 
+import java.util.Date;
+
 public class Client {
 
 	private Integer clientID;
-	private Text nom;
-	private Text prenom;
-	private Text courriel;
-	private Text telephone;
-	private DateTime dateDeNaissance;
-	private Text numPasseport;
-	private DateTime expirationPasseport;
+	private String nom;
+	private String prenom;
+	private String courriel;
+	private String telephone;
+	private Date dateDeNaissance;
+	private String numPasseport;
+	private Date expirationPasseport;
 
 }

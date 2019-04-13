@@ -2,19 +2,19 @@ package CompagniesDeTransport.Sections;
 
 public abstract class SectionCabines implements Section {
 
-	private Integer capacité;
+	private Integer capacite;
 	private Integer nbCabines;
 	protected float pourcentagePrix;
 	
 	public SectionCabines() {
 		setNbCabines(1);
-		setCapacité(1);
+		setCapacite(1);
 	}
-	public Integer getCapacité() {
-		return capacité;
+	public Integer getCapacite() {
+		return capacite;
 	}
-	public void setCapacité(Integer capacité) {
-		this.capacité = capacité;
+	public void setCapacite(Integer capacite) {
+		this.capacite = capacite;
 	}
 	public Integer getNbCabines() {
 		return nbCabines;

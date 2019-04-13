@@ -43,24 +43,24 @@ public class CompagnieRepository extends Repository {
 
 	public boolean gererCompagnie() {
 		boolean endCommand = true;
-		String clientMenuString = "1) Créer une nouvelle compagnie\n2) Effacer une compagnie\n3) Modifier une compagnie\n4) Log Out";
+		String clientMenuString = "1) CrÃ©er une nouvelle compagnie\n2) Effacer une compagnie\n3) Modifier une compagnie\n4) Log Out";
 		int selection = 0;
 		List<Integer> selectNumber = Arrays.asList(1, 2, 3, 4);
 		while(endCommand) {
-				System.out.println("Quelle opération voulez vous effectuer?\n"+ clientMenuString);
+				System.out.println("Quelle opÃ©ration voulez vous effectuer?\n"+ clientMenuString);
 				boolean toTheNextStep = true;
 				while(toTheNextStep) {
 					try {
 						selection = Integer.parseInt(userInput.next());
 						
 						if(!selectNumber.contains(selection)) {
-							System.out.println("Selection non valide. Veuillez réessayer:\n"
+							System.out.println("Selection non valide. Veuillez rÃ©essayer:\n"
 									+ clientMenuString);
 						}
 						else toTheNextStep = false;
 					}
 					catch(NumberFormatException e){
-						System.out.println("Selection non valide. Veuillez réessayer:\n"
+						System.out.println("Selection non valide. Veuillez rÃ©essayer:\n"
 								+ clientMenuString);
 					}
 				}
@@ -116,13 +116,13 @@ public class CompagnieRepository extends Repository {
 				selection = Integer.parseInt(userInput.next());
 				
 				if(!(0 <= selection && selection < compagnies.size())) {
-					System.out.println("Selection non valide. Veuillez réessayer:\n");
+					System.out.println("Selection non valide. Veuillez rÃ©essayer:\n");
 					consulter();
 				}
 				else toTheNextStep = false;
 			}
 			catch(NumberFormatException e){
-				System.out.println("Selection non valide. Veuillez réessayer:\n");
+				System.out.println("Selection non valide. Veuillez rÃ©essayer:\n");
 				consulter();
 			}
 		}
@@ -141,7 +141,7 @@ public class CompagnieRepository extends Repository {
 
 	@Override
 	public void modifier() {
-		System.out.println("Veuiller selectioner le numéro de la compagnie à modifier:");
+		System.out.println("Veuiller selectioner le numÃ©ro de la compagnie Ã© modifier:");
 		int toMod = getConsultIndex();
 		System.out.println("Quelle information voulez vous modifier sur: " + compagniePrint(compagnies.get(toMod)) + "?");
 		System.out.println("1)Sigil\n2)Nom\n3)Annuler");
@@ -153,12 +153,12 @@ public class CompagnieRepository extends Repository {
 				selection = Integer.parseInt(userInput.next());
 				
 				if(!(selection == 1 || selection == 2 || selection == 3)) {
-					System.out.println("Selection non valide. Veuillez réessayer:\n1)Sigil\n2)Nom\n3)Annuler");
+					System.out.println("Selection non valide. Veuillez rÃ©essayer:\n1)Sigil\n2)Nom\n3)Annuler");
 				}
 				else toTheNextStep = false;
 			}
 			catch(NumberFormatException e){
-				System.out.println("Selection non valide. Veuillez réessayer:\n1)Sigil\n2)Nom\n3)Annuler");
+				System.out.println("Selection non valide. Veuillez rÃ©essayer:\n1)Sigil\n2)Nom\n3)Annuler");
 			}
 		}
 		toTheNextStep = true;
@@ -166,23 +166,23 @@ public class CompagnieRepository extends Repository {
 		if(selection == 1) {
 			System.out.println("Veuiller entrer un nouveau Sigil:");
 			compagnies.get(toMod).setSigle(userInput.next());;
-			System.out.println("Modification réussite.");
+			System.out.println("Modification rÃ©ussite.");
 			change = true;
 		}else if(selection == 2) {
 			System.out.println("Veuiller entrer un nouveau Nom:");
 			compagnies.get(toMod).setNom(userInput.next());;
-			System.out.println("Modification réussite.");
+			System.out.println("Modification rÃ©ussite.");
 			change = true;
 		}
-		else System.out.println("Modification annulée.");
+		else System.out.println("Modification annulÃ©e.");
 		
 	}
 
 	@Override
 	public void supprimer() {
-		System.out.println("Veuiller selectioner le numéro du lieu à supprimer:");
+		System.out.println("Veuiller selectioner le numÃ©ro du lieu Ã  supprimer:");
 		int toDelete = getConsultIndex();
-		System.out.println("Êtes vous sûr de vouloir supprimer: " + compagniePrint(compagnies.get(toDelete)) + "?");
+		System.out.println("Ã©tes vous sÃ©r de vouloir supprimer: " + compagniePrint(compagnies.get(toDelete)) + "?");
 		System.out.println("1)Oui\n2)Non");
 		
 		int selection = 0;
@@ -192,22 +192,22 @@ public class CompagnieRepository extends Repository {
 				selection = Integer.parseInt(userInput.next());
 				
 				if(!(selection == 1 || selection == 2)) {
-					System.out.println("Selection non valide. Veuillez réessayer:\n1)Oui\n2)Non");
+					System.out.println("Selection non valide. Veuillez rÃ©essayer:\n1)Oui\n2)Non");
 				}
 				else toTheNextStep = false;
 			}
 			catch(NumberFormatException e){
-				System.out.println("Selection non valide. Veuillez réessayer:\n1)Oui\n2)Non");
+				System.out.println("Selection non valide. Veuillez rÃ©essayer:\n1)Oui\n2)Non");
 			}
 		}
 		toTheNextStep = true;
 		
 		if(selection == 1) {
 			compagnies.remove(toDelete);
-			System.out.println("Supression réussite.");
+			System.out.println("Supression rÃ©ussite.");
 			change = true;
 		}
-		else System.out.println("Supression annulée.");
+		else System.out.println("Supression annulÃ©e.");
 		
 	}
 

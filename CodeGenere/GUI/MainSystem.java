@@ -20,7 +20,7 @@ public class MainSystem {
 		int selection = 0;
 		boolean toTheNextStep = true;
 		
-		System.out.println("Bienvenu au système de réservation!");
+		System.out.println("Bienvenu au systeme de rservation!");
 		System.out.println("Voulez vous vous connecter en tant que:\n1)Client\n2)Administrateur");
 		
 		//Cette structure de while revient souvent sous plusieurs variante
@@ -29,13 +29,13 @@ public class MainSystem {
 				selection = Integer.parseInt(userInput.next());
 				
 				if(selection != 1 && selection != 2) {
-					System.out.println("Selection non valide. Veuillez réessayer:\n"
+					System.out.println("Selection non valide. Veuillez reessayer:\n"
 							+ "Voulez vous vous connecter en tant que:\n1)Client\n2)Administrateur");
 				}
 				else toTheNextStep = false;
 			}
 			catch(NumberFormatException e){
-				System.out.println("Selection non valide. Veuillez réessayer:\n"
+				System.out.println("Selection non valide. Veuillez reessayer:\n"
 						+ "Voulez vous vous connecter en tant que:\n1)Client\n2)Administrateur");
 			}
 		}
@@ -60,31 +60,31 @@ public class MainSystem {
 					}
 				}
 				catch(NumberFormatException e){
-					System.out.println("ID non valide. Veuillez réessayer:\n");
+					System.out.println("ID non valide. Veuillez reessayer:\n");
 				}
 			}
 			toTheNextStep = true;
 			
 			if(loggedIn) {
-				String clientMenuString = "1) Faire une réservation\n2) Payer une réservation\n3) Modification ou annulation de réservation\n4) Voir vos réservations\n"
-						+ "5) Voir les voyage Disponible\n6) Log Out";
+				String clientMenuString = "1) Faire une reservation\n2) Payer une reservation\n3) Modification ou annulation de reservation\n4) Voir vos reservations\n"
+						+ "5) Voir les voyages Disponibles\n6) Log Out";
 				List<Integer> selectNumber = Arrays.asList(1, 2, 3, 4, 5, 6);
 				
-				System.out.println("Bienvenu au système de réservation!\nVous êtes loggué en tant que Client.");
+				System.out.println("Bienvenu au systeme de reservation!\nVous etes loggue en tant que Client.");
 				while(loggedIn) {
-					System.out.println("Quelle opération voulez vous effectuer?\n"+ clientMenuString);
+					System.out.println("Quelle operation voulez vous effectuer?\n"+ clientMenuString);
 					while(toTheNextStep) {
 						try {
 							selection = Integer.parseInt(userInput.next());
 							
 							if(!selectNumber.contains(selection)) {
-								System.out.println("Selection non valide. Veuillez réessayer:\n"
+								System.out.println("Selection non valide. Veuillez reessayer:\n"
 										+ clientMenuString);
 							}
 							else toTheNextStep = false;
 						}
 						catch(NumberFormatException e){
-							System.out.println("Selection non valide. Veuillez réessayer:\n"
+							System.out.println("Selection non valide. Veuillez reessayer:\n"
 									+ clientMenuString);
 						}
 					}
@@ -115,34 +115,34 @@ public class MainSystem {
 				}
 			}
 			else {
-				System.out.println("ID invalide. Système shut down...\n");
+				System.out.println("ID invalide. Systeme shut down...\n");
 			}
 			
 		}
 		else {
 			//Menu admin
 			String adminMenuString = "1) Gestion de Lieux\n2) Gestion de Compagnies\n3) Gestion de Clients\n4) Gestion de Voyages\n"
-					+ "5) Gestion de Vehicules\n6) Gestion de Réservation\n7) Voir sommaire des itinéraires\n8) Voir itinéraires détaillé\n9)Log Out";
+					+ "5) Gestion de Vehicules\n6) Gestion de Reservation\n7) Voir sommaire des itineraires\n8) Voir itineraires detaille\n9)Log Out";
 			//Ajouter les nmero de selection a selectNumber quand il y a nouvelle option
 			List<Integer> selectNumber = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
 			
-			System.out.println("Bienvenu au système de réservation!\nVous êtes loggué en tant que Administrateur.");
+			System.out.println("Bienvenu au systeme de reservation!\nVous etes loggue en tant que Administrateur.");
 			boolean loggedIn = true;  //Est false losquon veut logout
 			while(loggedIn) {
-				System.out.println("Quelle opération voulez vous effectuer?\n"+ adminMenuString);
+				System.out.println("Quelle operation voulez vous effectuer?\n"+ adminMenuString);
 				//La fameuse while
 				while(toTheNextStep) {
 					try {
 						selection = Integer.parseInt(userInput.next());
 						
 						if(!selectNumber.contains(selection)) {
-							System.out.println("Selection non valide. Veuillez réessayer:\n"
+							System.out.println("Selection non valide. Veuillez reessayer:\n"
 									+ adminMenuString);
 						}
 						else toTheNextStep = false;
 					}
 					catch(NumberFormatException e){
-						System.out.println("Selection non valide. Veuillez réessayer:\n"
+						System.out.println("Selection non valide. Veuillez reessayer:\n"
 								+ adminMenuString);
 					}
 				}
@@ -190,7 +190,7 @@ public class MainSystem {
 		}
 		
 		
-		System.out.println("Deconnection complété. À la prochaine!");
+		System.out.println("Deconnection complete. A la prochaine!");
 		/*
 		System.out.println("Test input:");
 		String input = userInput.nextLine();

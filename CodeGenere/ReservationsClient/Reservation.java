@@ -1,11 +1,13 @@
 package ReservationsClient;
 
+import com.sun.jmx.snmp.Timestamp;
+
 import Transit.Voyage.*;
 
 public class Reservation {
 
 	Voyage voyageAssocie;
-	private boolean confirmé;
+	private boolean confirmed;
 	private Integer reservationID;
 	private Double balance;
 	private Timestamp heureReservation;

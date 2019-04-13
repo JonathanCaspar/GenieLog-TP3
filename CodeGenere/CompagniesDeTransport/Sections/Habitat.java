@@ -8,7 +8,7 @@ public abstract class Habitat {
 	private HabitatState available;
 	private HabitatState reserved;
 	private HabitatState confirmed;
-	private Money prix;
+	private float prix;
 
 	/**
 	 * 
