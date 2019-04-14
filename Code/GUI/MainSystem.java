@@ -1,5 +1,4 @@
 package GUI;
-import java.util.InputMismatchException;
 import java.util.*;
 
 import Repositories.Database;
@@ -20,7 +19,7 @@ public class MainSystem {
 		int selection = 0;
 		boolean toTheNextStep = true;
 		
-		System.out.println("Bienvenu au systeme de rservation!");
+		System.out.println("Bienvenue au systeme de rservation!");
 		System.out.println("Voulez vous vous connecter en tant que:\n1)Client\n2)Administrateur");
 		
 		//Cette structure de while revient souvent sous plusieurs variante
