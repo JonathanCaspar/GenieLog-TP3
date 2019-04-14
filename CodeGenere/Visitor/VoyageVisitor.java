@@ -8,7 +8,7 @@ public interface VoyageVisitor {
 	 * 
 	 * @param vol
 	 */
-	String visit(Vol vol);
+	void visit(Vol vol);
 
 	/**
 	 * 

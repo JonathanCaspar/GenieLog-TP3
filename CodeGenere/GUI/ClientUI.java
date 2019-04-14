@@ -1,15 +1,18 @@
 package GUI;
 
 import ReservationsClient.Client;
+import Visitor.*;
 
 public class ClientUI {
 
 	private Client client;
 	ClientDBObserver db;
+	ClientVoyageVisitor clientVisit;
 	
 	public ClientUI(Client client) {
 		this.setClient(client);
-		db = new ClientDBObserver();
+		db = new ClientDBObserver("client");
+		clientVisit = new ClientVoyageVisitor();
 	}
 
 	public void reserver() {
@@ -33,8 +36,7 @@ public class ClientUI {
 	}
 
 	public void afficherVoyagesDisponibles() {
-		// TODO - implement ClientUI.afficherItinerairesDisponibles
-		throw new UnsupportedOperationException();
+		db.getVoyageRepo().getSummary(clientVisit);
 	}
 
 	public Client getClient() {

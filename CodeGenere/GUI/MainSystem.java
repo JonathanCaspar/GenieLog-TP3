@@ -12,7 +12,7 @@ public class MainSystem {
 		//Initiate
 		Database database = new Database(userInput);
 		AdminUI admin = new AdminUI(database);
-		ClientUI client;
+		ClientUI client = null;
 		
 		//Attach observer(client only when initiated)
 		database.attach(admin.getAdminObserver());
@@ -44,7 +44,7 @@ public class MainSystem {
 		//Ce if delimite si on est client(1) ou admin(2)
 		if(selection == 1) {
 			//Cette partie est incomplete et est une copie de admin comme placeholder
-			System.out.println("Veuiler entrer votre ID en tant que Client:\n");
+			System.out.println("Veuiler entrer votre ID en tant que Client(Default 0):\n");
 			
 			boolean loggedIn = true;
 			while(toTheNextStep) {
@@ -93,22 +93,22 @@ public class MainSystem {
 					toTheNextStep = true;
 					switch(selection) {
 						case 1:
-							
+							client.reserver();
 							break;
 						case 2:
-							admin.gererCompagnie();
+							client.payer();
 							break;
 						case 3:
-							admin.gererClient();
+							client.modifierAnnulerReservation();
 							break;
 						case 4:
-							admin.gererVoyage();
+							client.afficherReservations();
 							break;
 						case 5:
-							admin.gererVehicule();
+							client.afficherVoyagesDisponibles();
 							break;
 						case 6:
-							admin.gererReservation();
+							loggedIn = false;
 							break;
 						default:
 							
@@ -124,9 +124,9 @@ public class MainSystem {
 		else {
 			//Menu admin
 			String adminMenuString = "1) Gestion de Lieux\n2) Gestion de Compagnies\n3) Gestion de Clients\n4) Gestion de Voyages\n"
-					+ "5) Gestion de Vehicules\n6) Gestion de Reservation\n7) Voir sommaire des itineraires\n8) Voir itineraires detaille\n9)Log Out";
+					+ "5) Gestion de Vehicules\n6) Gestion de Reservation\n7) Voir sommaire des itineraires\n8)Log Out";
 			//Ajouter les nmero de selection a selectNumber quand il y a nouvelle option
-			List<Integer> selectNumber = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+			List<Integer> selectNumber = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8);
 			
 			System.out.println("Bienvenu au systeme de reservation!\nVous etes loggue en tant que Administrateur.");
 			boolean loggedIn = true;  //Est false losquon veut logout
@@ -179,9 +179,6 @@ public class MainSystem {
 						admin.voirSommaireItineraires();
 						break;
 					case 8:
-						admin.voirItinerairesDetailles();
-						break;
-					case 9:
 						loggedIn = false;
 						break;
 					default:

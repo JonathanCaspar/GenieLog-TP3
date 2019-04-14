@@ -5,8 +5,7 @@ import Visitor.VoyageVisitor;
 public class Vol extends Voyage {
 
 	@Override
-	public String accept(VoyageVisitor visitor) {
-		// TODO Auto-generated method stub
-		return null;
+	public void accept(VoyageVisitor visitor) {
+		visitor.visit(this);
 	}
 }

@@ -74,7 +74,7 @@ public class VoyageRepository extends Repository {
 	SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 	
 	public void creer(FabriqueVoyage fabVoy) {
-		Voyage voy = fabVoy.createVoyage();
+		Voyage voy = fabVoy.createVoyage(db);
 		
 		System.out.println("Entrer un id:");
 		voy.setId(userInput.next());
@@ -222,7 +222,10 @@ public class VoyageRepository extends Repository {
 	 * @param visitor
 	 */
 	public void getSummary(VoyageVisitor visitor) {
-		consulter();
+		int i = 0;
+		for(Voyage voy : this.voyages) {
+			voy.accept(visitor);
+		}
 	}
 
 	@Override

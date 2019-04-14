@@ -5,6 +5,7 @@ public abstract class Lieu {
 	private String sigle;
 	private String pays;
 	private String ville;
+	protected String lieuType;
 	public String getSigle() {
 		return sigle;
 	}
@@ -22,6 +23,10 @@ public abstract class Lieu {
 	}
 	public void setVille(String ville) {
 		this.ville = ville;
+	}
+	
+	public String getLieuType() {
+		return lieuType;
 	}
 	
 	

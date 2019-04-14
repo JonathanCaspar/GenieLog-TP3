@@ -3,16 +3,19 @@ package GUI;
 import Repositories.ClientRepository;
 import Repositories.Database;
 import ReservationsClient.Client;
+import Visitor.AdminVoyageVisitor;
 
 public class AdminUI {
 	
 	AdminInvoker adminInvo;
 	AdminDBObserver db;
+	AdminVoyageVisitor adminVisit;
 	
 	//constructeur
 	public AdminUI(Database localDB) {
 		adminInvo = new AdminInvoker();
 		db = new AdminDBObserver("admin");
+		adminVisit = new AdminVoyageVisitor();
 	}
 	
 	//Prend gererLieu comme exemple de structure. Il y a aussi compagnie et vehicule qui fonctionnent
@@ -47,7 +50,7 @@ public class AdminUI {
 	}
 
 	public void voirSommaireItineraires() {
-
+		db.getVoyageRepo().getSummary(adminVisit);
 	}
 
 	public void voirItinerairesDetailles() {

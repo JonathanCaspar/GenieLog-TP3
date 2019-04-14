@@ -134,14 +134,7 @@ public class LieuRepository extends Repository {
 			
 	}
 
-	@Override
-	public void consulter() {
-		int i = 0;
-		for(Lieu lieu : this.lieux) {
-			System.out.println(i + ")" + lieuPrint(lieu));
-			i++;
-		}
-	}
+	
 	
 	public Lieu getLieuByVille(String ville) {
 		for(Lieu lieu : this.lieux) {
@@ -150,6 +143,42 @@ public class LieuRepository extends Repository {
 		return null;
 	}
 	
+	public List<Lieu> getPort(){
+		List<Lieu> temp = new ArrayList<Lieu>();
+		for(Lieu lieu : this.lieux) {
+			if(lieu.getLieuType() == "Port") {
+				temp.add(lieu);
+			}
+		}
+		return temp;
+	}
+	public List<Lieu> getAeroport(){
+		List<Lieu> temp = new ArrayList<Lieu>();
+		for(Lieu lieu : this.lieux) {
+			if(lieu.getLieuType() == "Aeroport") {
+				temp.add(lieu);
+			}
+		}
+		return temp;
+	}
+	public List<Lieu> getGare(){
+		List<Lieu> temp = new ArrayList<Lieu>();
+		for(Lieu lieu : this.lieux) {
+			if(lieu.getLieuType() == "Gare") {
+				temp.add(lieu);
+			}
+		}
+		return temp;
+	}
+	
+	@Override
+	public void consulter() {
+		int i = 0;
+		for(Lieu lieu : this.lieux) {
+			System.out.println(i + ")" + lieuPrint(lieu));
+			i++;
+		}
+	}
 	public String lieuPrint(Lieu lieu) {
 		return ("Sigle: " + lieu.getSigle() + " | Pays: " + lieu.getPays() + " | Ville: " + lieu.getVille());
 	}
