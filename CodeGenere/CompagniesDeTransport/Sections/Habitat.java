@@ -14,29 +14,28 @@ public abstract class Habitat {
 	 * 
 	 * @param HabitatState
 	 */
-	public void setHabitatState(int HabitatState) {
-		// TODO - implement Habitat.setHabitatState
-		throw new UnsupportedOperationException();
+	public void setHabitatState(HabitatState habitatState) {
+		this.currentState = habitatState;
 	}
 
 	public HabitatState getAvailableState() {
-		// TODO - implement Habitat.getAvailableState
-		throw new UnsupportedOperationException();
+		return this.available;
 	}
 
 	public HabitatState getReservedState() {
-		// TODO - implement Habitat.getReservedState
-		throw new UnsupportedOperationException();
+		return this.reserved;
 	}
 
 	public HabitatState getConfirmedState() {
-		// TODO - implement Habitat.getConfirmedState
-		throw new UnsupportedOperationException();
+		return this.confirmed;
+	}
+	
+	public float getPrix() {
+		return prix;
 	}
 
 	public void reserver() {
-		// TODO - implement Habitat.reserver
-		throw new UnsupportedOperationException();
+		this.currentState.reserver(this);
 	}
 
 }

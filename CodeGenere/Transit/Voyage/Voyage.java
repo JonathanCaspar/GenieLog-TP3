@@ -2,6 +2,7 @@ package Transit.Voyage;
 
 import Visitor.*;
 
+import java.text.SimpleDateFormat;
 import java.time.*;
 import java.util.*;
 
@@ -15,6 +16,8 @@ public abstract class Voyage implements VoyageVisitable {
 	private Lieu lieuArrivee;
 	private Date dateArrivee;
 	private float prix;
+	public static SimpleDateFormat formater = new SimpleDateFormat("yyyy.MM.dd:kk.mm");
+	
 	public String getId() {
 		return id;
 	}
@@ -27,8 +30,8 @@ public abstract class Voyage implements VoyageVisitable {
 	public void setLieuDepart(Lieu lieuDepart) {
 		this.lieuDepart = lieuDepart;
 	}
-	public Date getDateDepart() {
-		return dateDepart;
+	public String getDateDepart() {
+		return formater.format(dateDepart);
 	}
 	public void setDateDepart(Date dateDepart) {
 		this.dateDepart = dateDepart;
@@ -39,8 +42,8 @@ public abstract class Voyage implements VoyageVisitable {
 	public void setLieuArrivee(Lieu lieuArrivee) {
 		this.lieuArrivee = lieuArrivee;
 	}
-	public Date getDateArrivee() {
-		return dateArrivee;
+	public String getDateArrivee() {
+		return formater.format(dateArrivee);
 	}
 	public void setDateArrivee(Date dateArrivee) {
 		this.dateArrivee = dateArrivee;

@@ -4,15 +4,11 @@ import ReservationsClient.*;
 
 public class HabitatDisponible implements HabitatState{
 
-	public void reserver() {
-		// TODO - implement HabitatDisponible.reserver
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
-	public Reservation getReservationAssociee() {
-		// TODO Auto-generated method stub
-		return null;
+	public Reservation reserver(Habitat habitat) {
+		
+		System.out.println("La réservation est effectuée.");
+		return new Reservation(habitat);
+		
 	}
 
 }

@@ -4,14 +4,9 @@ import ReservationsClient.*;
 
 public class HabitatReservee implements HabitatState {
 
-	public void reserver() {
-		// TODO - implement HabitatReservee.reserver
-		throw new UnsupportedOperationException();
-	}
-
 	@Override
-	public Reservation getReservationAssociee() {
-		// TODO Auto-generated method stub
+	public Reservation reserver(Habitat habitat) {
+		System.out.println("La réservation de cet habitat est impossible car il est deja réservé mais il pourrait se libérer sous 24h.");
 		return null;
 	}
 

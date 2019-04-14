@@ -4,13 +4,13 @@ import java.util.*;
 
 import com.sun.jmx.snmp.Timestamp;
 
-import Transit.Voyage.*;
+import CompagniesDeTransport.Sections.Habitat;
 
 public class Reservation {
 
-	Voyage voyageAssocie;
+	Habitat habitatAssocie;
 	private boolean confirmed;
-	private Integer reservationID;
+	private String reservationID;
 	private float balance;
 	private Date heureReservation;
 
@@ -23,14 +23,23 @@ public class Reservation {
 		throw new UnsupportedOperationException();
 	}
 
+	public Reservation(Habitat habitatAssocie) {
+		super();
+		this.habitatAssocie = habitatAssocie;
+		this.balance = habitatAssocie.getPrix();
+		this.confirmed = false;
+		this.reservationID = UUID.randomUUID().toString();
+		this.heureReservation = new Date();
+	}
+
 	public void annuler() {
 		// TODO - implement Reservation.annuler
 		throw new UnsupportedOperationException();
 	}
 
-	public void setVoyage(Voyage voy) {
-		this.voyageAssocie = voy;
-		this.setBalance(voy.getPrix());
+	public void setHabitat(Habitat habitatAssocie) {
+		this.habitatAssocie = habitatAssocie;
+		this.setBalance(habitatAssocie.getPrix());
 	}
 	public boolean isConfirmed() {
 		return confirmed;
@@ -40,11 +49,11 @@ public class Reservation {
 		this.confirmed = confirmed;
 	}
 
-	public Integer getReservationID() {
+	public String getReservationID() {
 		return reservationID;
 	}
 
-	public void setReservationID(Integer reservationID) {
+	public void setReservationID(String reservationID) {
 		this.reservationID = reservationID;
 	}
 

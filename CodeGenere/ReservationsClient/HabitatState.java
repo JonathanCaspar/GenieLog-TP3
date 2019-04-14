@@ -1,9 +1,9 @@
 package ReservationsClient;
 
+import CompagniesDeTransport.Sections.Habitat;
+
 public interface HabitatState {
-
-	Reservation getReservationAssociee();
-
-	void reserver();
+	
+	Reservation reserver(Habitat habitat);
 
 }
