@@ -72,7 +72,7 @@ public class MainSystem {
 						+ "5) Voir les voyages Disponibles\n6) Log Out";
 				List<Integer> selectNumber = Arrays.asList(1, 2, 3, 4, 5, 6);
 				
-				System.out.println("Bienvenu au systeme de reservation!\nVous etes loggue en tant que Client.");
+				System.out.println("Bienvenue au systeme de reservation!\nVous etes loggue en tant que Client.");
 				while(loggedIn) {
 					System.out.println("Quelle operation voulez vous effectuer?\n"+ clientMenuString);
 					while(toTheNextStep) {
@@ -128,7 +128,7 @@ public class MainSystem {
 			//Ajouter les nmero de selection a selectNumber quand il y a nouvelle option
 			List<Integer> selectNumber = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8);
 			
-			System.out.println("Bienvenu au systeme de reservation!\nVous etes loggue en tant que Administrateur.");
+			System.out.println("Bienvenue au systeme de reservation!\nVous etes loggue en tant que Administrateur.");
 			boolean loggedIn = true;  //Est false losquon veut logout
 			while(loggedIn) {
 				System.out.println("Quelle operation voulez vous effectuer?\n"+ adminMenuString);
