@@ -2,6 +2,7 @@ package Repositories;
 
 import java.util.*;
 
+import GUI.AdminDBObserver;
 import GUI.RepositoryObserver;
 
 public class Database extends RepositorySubject {
@@ -29,7 +30,7 @@ public class Database extends RepositorySubject {
 		reservationRepo = new ReservationRepository(userInput);
 		lieuRepo = new LieuRepository(userInput);
 		clientRepo = new ClientRepository(userInput);
-		voyageRepo = new VoyageRepository(userInput);
+		voyageRepo = new VoyageRepository(userInput, this);
 	}
 	
 	//Un test juste pour voir si observer fonctionne bien(ce qui est confirmer)
@@ -96,8 +97,8 @@ public class Database extends RepositorySubject {
 		subjectNotify();
 	}
 	
-	public void gererVoyageDB() {
-		change = voyageRepo.gererVoyage();
+	public void gererVoyageDB(AdminDBObserver db) {
+		change = voyageRepo.gererVoyage(db);
 		subjectNotify();
 	}
 	

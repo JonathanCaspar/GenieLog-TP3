@@ -143,6 +143,13 @@ public class LieuRepository extends Repository {
 		}
 	}
 	
+	public Lieu getLieuByVille(String ville) {
+		for(Lieu lieu : this.lieux) {
+			if(lieu.getVille().equals(ville)) return lieu;
+		}
+		return null;
+	}
+	
 	public String lieuPrint(Lieu lieu) {
 		return ("Sigle: " + lieu.getSigle() + " | Pays: " + lieu.getPays() + " | Ville: " + lieu.getVille());
 	}

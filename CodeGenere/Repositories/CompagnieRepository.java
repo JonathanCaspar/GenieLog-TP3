@@ -116,14 +116,14 @@ public class CompagnieRepository extends Repository {
 				selection = Integer.parseInt(userInput.next());
 				
 				if(!(0 <= selection && selection < compagnies.size())) {
-					System.out.println("Selection non valide. Veuillez réessayer:\n");
 					consulter();
+					System.out.println("Selection non valide. Veuillez réessayer:\n");
 				}
 				else toTheNextStep = false;
 			}
 			catch(NumberFormatException e){
-				System.out.println("Selection non valide. Veuillez réessayer:\n");
 				consulter();
+				System.out.println("Selection non valide. Veuillez réessayer:\n");
 			}
 		}
 		return selection;

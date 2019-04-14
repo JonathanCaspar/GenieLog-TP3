@@ -53,10 +53,12 @@ public class MainSystem {
 					if(admin.getClient(selection) != null) {
 						toTheNextStep = false;
 						client = new ClientUI(admin.getClient(selection));
+						database.attach(client.getClientObserver());
 					}
 					else {
 						toTheNextStep = true;
 						loggedIn = false;
+						System.out.println("ID non valide. Veuillez reessayer:\n");
 					}
 				}
 				catch(NumberFormatException e){

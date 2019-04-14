@@ -15,42 +15,7 @@ public abstract class FabriqueVoyage {
 	protected abstract Voyage fabricateUnit();
 	
 	public Voyage createVoyage() {
-		//To be used for userInput
-		
-		
-		
-		Voyage voy = fabricateUnit();
-		System.out.println("Entrer un id:\n");
-		voy.setId(userInput.next());
-		
-		/*
-		System.out.println("Entrer un lieu de d�part:\n");
-		voy.setLieuDepart(userInput.next());
-		System.out.println("Entrer un lieu d'arriv�:\n");
-		voy.setLieuArrivee(userInput.next());
-		*/
-		
-		boolean timeok = true;
-		while(timeok) {
-			try {
-				String pattern = "yyyy-MM-dd";
-				SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-
-				//Date date = simpleDateFormat.parse("2018-09-09");
-				
-				System.out.println("Entrer une date de départ(AAAA-MM-JJ):\n");
-				Date date = simpleDateFormat.parse(userInput.next());
-				
-				voy.setDateDepart(date);
-				timeok = false;
-				
-			}catch(ParseException e) {
-				System.out.println("Format invalide. Veuiller r�essayer:");
-			}
-		}
-		timeok = true;
-
-		return voy;
+		return fabricateUnit();
 	}
 
 }

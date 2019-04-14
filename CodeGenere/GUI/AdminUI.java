@@ -1,5 +1,6 @@
 package GUI;
 
+import Repositories.ClientRepository;
 import Repositories.Database;
 import ReservationsClient.Client;
 
@@ -26,8 +27,8 @@ public class AdminUI {
 	}
 
 	public void gererVoyage() {
-		// TODO - implement AdminUI.gererVoyage
-		throw new UnsupportedOperationException();
+		adminInvo.setCommand(new GererVoyage(db.getSubjectReference(), db));
+		adminInvo.executeCommand();
 	}
 
 	public void gererVehicule() {
@@ -36,8 +37,8 @@ public class AdminUI {
 	}
 
 	public void gererClient() {
-		// TODO - implement AdminUI.gererClient
-		throw new UnsupportedOperationException();
+		adminInvo.setCommand(new GererClient(db.getSubjectReference()));
+		adminInvo.executeCommand();
 	}
 
 	public void gererReservation() {
@@ -58,7 +59,7 @@ public class AdminUI {
 	}
 	
 	public Client getClient(int clientID) {
-		return null;
+		return db.getClientRepo().getClientById(clientID);
 	}
 	
 	public AdminDBObserver getAdminObserver() {

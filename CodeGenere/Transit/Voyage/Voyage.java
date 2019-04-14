@@ -12,10 +12,8 @@ public abstract class Voyage implements VoyageVisitable {
 	private String id;
 	private Lieu lieuDepart;
 	private Date dateDepart;
-	private LocalTime heureDepart;
 	private Lieu lieuArrivee;
 	private Date dateArrivee;
-	private LocalTime heureArrivee;
 	private float prix;
 	public String getId() {
 		return id;
@@ -35,12 +33,6 @@ public abstract class Voyage implements VoyageVisitable {
 	public void setDateDepart(Date dateDepart) {
 		this.dateDepart = dateDepart;
 	}
-	public LocalTime getHeureDepart() {
-		return heureDepart;
-	}
-	public void setHeureDepart(LocalTime heureDepart) {
-		this.heureDepart = heureDepart;
-	}
 	public Lieu getLieuArrivee() {
 		return lieuArrivee;
 	}
@@ -52,12 +44,6 @@ public abstract class Voyage implements VoyageVisitable {
 	}
 	public void setDateArrivee(Date dateArrivee) {
 		this.dateArrivee = dateArrivee;
-	}
-	public LocalTime getHeureArrivee() {
-		return heureArrivee;
-	}
-	public void setHeureArrivee(LocalTime heureArrivee) {
-		this.heureArrivee = heureArrivee;
 	}
 	public float getPrix() {
 		return prix;

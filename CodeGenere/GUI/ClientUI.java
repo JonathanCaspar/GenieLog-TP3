@@ -4,12 +4,11 @@ import ReservationsClient.Client;
 
 public class ClientUI {
 
-	private int clientID;
 	private Client client;
 	ClientDBObserver db;
 	
 	public ClientUI(Client client) {
-		this.client = client;
+		this.setClient(client);
 		db = new ClientDBObserver();
 	}
 
@@ -36,6 +35,18 @@ public class ClientUI {
 	public void afficherVoyagesDisponibles() {
 		// TODO - implement ClientUI.afficherItinerairesDisponibles
 		throw new UnsupportedOperationException();
+	}
+
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+	
+	public ClientDBObserver getClientObserver() {
+		return this.db;
 	}
 
 }

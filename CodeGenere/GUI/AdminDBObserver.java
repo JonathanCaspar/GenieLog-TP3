@@ -30,6 +30,7 @@ public class AdminDBObserver extends RepositoryObserver {
 	}
 	public void setSubject(Database subject) {
 		this.subject = subject;
+		update();
 	}
 	
 	public Database getSubjectReference() {
